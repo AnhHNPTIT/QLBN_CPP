@@ -196,24 +196,6 @@ class menu
 			return "";
 		}
 
-		// string getLocation(string listLocationID) {
-		// 	string result = "";
-		// 	char* char_arr;
-		// 	char_arr = &listLocationID[0];
-		// 	const char s[2] = " ";
-		// 	char *token;
-		// 	int arrayLocationID[100], count = 0;
-		
-		// 	token = strtok(char_arr, s);
-		// 	while(token != NULL)
-		// 	{
-		// 		arrayLocationID[count++] = atoi(token);
-		// 		token = strtok(NULL, s);
-		// 	}
-
-		// 	return result;
-		// }
-
 		string getLocation(string listLocationID) {
 			string result = "";
 			char* char_arr;
@@ -224,8 +206,9 @@ class menu
 			token = strtok(char_arr, s);
 			while(token != NULL)
 			{
-				result += getLocationByLocationID(atoi(token)) + "\t\t|";
+				char *temp = token;
 				token = strtok(NULL, s);
+				result = result + temp + ", " + getLocationByLocationID(atoi(temp)) + "\n";
 			}
 			return result;
 		}
@@ -240,7 +223,7 @@ class menu
 		}
 
 		string getSymptom(string listSymptomID) {
-			string result = "11111111111111111111111111111111111111111111111111";
+			string result = "";
 			char* char_arr;
 			char_arr = &listSymptomID[0];
 			const char s[2] = " ";
@@ -249,9 +232,9 @@ class menu
 			token = strtok(char_arr, s);
 			while(token != NULL)
 			{
-				cout << "token:" << token << endl;
-				result += getSymptomBySymptomID(atoi(token)) + "\n";
+				char *temp = token;
 				token = strtok(NULL, s);
+				result = result + temp + ", " + getSymptomBySymptomID(atoi(temp)) + "\n";
 			}
 			return result;
 		}
@@ -396,16 +379,16 @@ class menu
 						}
                     case 5:
                         {
-							// cout << "====================== THE COVID POSITIVE PATIENTS DETAIL===========================" << endl;
-							// cout << "Patient ID" << "	" << "Visited Location" << "	" << "Last Overseas Travel" << "	" << "Date time" << "	" << "Symptom" << endl;
-							// for (int i = 0; i < numPatientDetail; i++) {
-							// 	if (listPatientDetail[i].getCovidTest() == "Positive") {
-									// cout << listPatientDetail[i].getPatientID() << "	" << getLocation(listPatientDetail[i].getVisitedLocation()) << "	" << listPatientDetail[i].getLastOverseasTravel() << "    " << listPatientDetail[i].getDateTime() << "    " << getSymptom(listPatientDetail[i].getSymptoms()) << endl;
-									// cout << getLocation(listPatientDetail[i].getVisitedLocation()) << endl;
-									// cout << listPatientDetail[i].getPatientID() << "	" << getLocation(listPatientDetail[i].getVisitedLocation()) << "	" << listPatientDetail[i].getLastOverseasTravel() << "    " << listPatientDetail[i].getDateTime() << "    " << getSymptom(listPatientDetail[i].getSymptoms()) << endl;
-									cout << getLocation("1 2 ");
-							// 	}
-							// }
+							cout << "====================== THE COVID POSITIVE PATIENTS DETAIL===========================" << endl;
+							for (int i = 0; i < numPatientDetail; i++) {
+								if (listPatientDetail[i].getCovidTest() == "Positive") {
+									cout << "Patient ID: " << listPatientDetail[i].getPatientID() << endl;
+									cout << "Visited Location: " << endl << getLocation(listPatientDetail[i].getVisitedLocation());
+									cout << "Last Overseas Travel: " << listPatientDetail[i].getLastOverseasTravel() << endl;
+									cout << "Date time: " << listPatientDetail[i].getDateTime() << endl;
+									cout << "Symptom: " << endl << getSymptom(listPatientDetail[i].getSymptoms()) << endl;
+								}
+							}
                             break;
                         }
 					case 6:

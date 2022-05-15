@@ -57,67 +57,67 @@ class PatientDetail
 		}
 
 		int getPatientID() {
-			return patientID;
+			return this->patientID;
 		}
 		void setPatientID(int patientID) {
 			this->patientID = patientID;
 		}
 		string getName() {
-			return name;
+			return this->name;
 		}
 		void setName(string name) {
 			this->name = name;
 		}
 		string getdOB() {
-			return dOB;
+			return this->dOB;
 		}
 		void setdOB(string dOB) {
 			this->dOB = dOB;
 		}
 		string getAddress() {
-			return address;
+			return this->address;
 		}
 		void setAddress(string address) {
 			this->address = address;
 		}
 		string getPhoneNumber() {
-			return phoneNumber;
+			return this->phoneNumber;
 		}
 		void setPhoneNumber(string phoneNumber) {
 			this->phoneNumber = phoneNumber;
 		}
 		string getVisitedLocation() {
-			return visitedLocation;
+			return this->visitedLocation;
 		}
 		void setVisitedLocation(string visitedLocation) {
 			this->visitedLocation = visitedLocation;
 		}
 		string getDateTime() {
-			return dateTime;
+			return this->dateTime;
 		}
 		void setDateTime(string dateTime) {
 			this->dateTime = dateTime;
 		}
 		string getLastOverseasTravel() {
-			return lastOverseasTravel;
+			return this->lastOverseasTravel;
 		}
 		void setLastOverseasTravel(string lastOverseasTravel) {
 			this->lastOverseasTravel = lastOverseasTravel;
 		}
 		string getSymptoms() {
-			return symptoms;
+			return this->symptoms;
 		}
 		void setSymptoms(string symptoms) {
 			this->symptoms = symptoms;
 		}
 		string getCovidTest() {
-			return covidTest;
+			return this->covidTest;
 		}
 		void setCovidTest(string covidTest) {
 			this->covidTest = covidTest;
 		}
 		string getStatus() {
-			return status;
+			return this->status;
 		}
 		void setStatus(string status) {
 			this->status = status;

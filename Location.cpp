@@ -29,13 +29,13 @@ class Location
 		}
 
 		int getLocationID() {
-			return locationID;
+			return this->locationID;
 		}
 		void setLocationID(int locationID) {
 			this->locationID = locationID;
 		}
 		string getLocation() {
-			return location;
+			return this->location;
 		}
 		void setLocation(string location) {
 			this->location = location;

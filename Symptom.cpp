@@ -32,42 +32,21 @@ class Symptom
 		}
 
 		int getSymptomID() {
-			return symptomID;
+			return this->symptomID;
 		}
 		void setSymptomID(int symptomID) {
 			this->symptomID = symptomID;
 		}
 		string getName() {
-			return name;
+			return this->name;
 		}
 		void setName(string name) {
 			this->name = name;
 		}
 		string getTypeRisk() {
-			return typeRisk;
+			return this->typeRisk;
 		}
 		void setTypeRisk(string typeRisk) {
 			this->typeRisk = typeRisk;
-		}
-
-		friend istream & operator>>(istream &is, Symptom &patient)
-		{
-			cout << "Enter symptom id: "; is >> patient.symptomID;
-			is.ignore();
-			cout << "Enter name: "; is >> patient.name;
-			cout << "Enter type risk: "; is >> patient.typeRisk;
-			return is;
-		}
-
-		friend ostream & operator<<(ostream & os, Symptom &patient)
-		{
-			os << "---------------SYMPTOM----------------" << endl;
-			os << "symptom id: " << patient.symptomID << endl;
-			os << "name: " << patient.name << endl;
-			os << "type risk: " << patient.typeRisk << endl;
-			return os;
-		}
-
-
-	
+		}	
 };
