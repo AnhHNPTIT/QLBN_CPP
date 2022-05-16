@@ -7,17 +7,14 @@ using namespace std;
 
 class Symptom 
 {
-	protected:
+	public:
 		int symptomID; // mã triệu chứng
 		string name; // triệu chứng
 		string typeRisk; // low, medium or high risk
 
-	public:
 		// Hàm khởi tạo không tham số
 		Symptom(){
-			this->symptomID = 0;
-			this->name = "";
-			this->typeRisk = "";
+
 		}
 
 		// Hàm khởi tạo có tham số
@@ -26,9 +23,6 @@ class Symptom
 			this->symptomID = symptomID;
 			this->name = name;
 			this->typeRisk = typeRisk;
-		}
-
-		~Symptom(){
 		}
 
 		int getSymptomID() {

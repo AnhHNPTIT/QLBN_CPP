@@ -9,7 +9,7 @@ using namespace std;
 
 class menu
 {
-    private:
+    public:
 		PatientDetail listPatientDetail[100];
 		int numPatientDetail = 0;
 		Location listLocation[100];
@@ -17,7 +17,6 @@ class menu
 		Symptom listSymptom[100];
 		int numSymptom = 0;
 
-    public:
 		void readFilePatientDetail(){
 			string patientID, name, dOB, address, phoneNumber, visitedLocation, dateTime, lastOverseasTravel, listSymptom, covidTest, status;
 			ifstream file("COVID_Patient_data.txt",ios::in);
@@ -152,11 +151,12 @@ class menu
 
 		// Check high risk of list symptom id
 		bool checkHighRisk(string listSymptomID) {
+			// refer to https://laptrinhcanban.com/cpp/lap-trinh-cpp-co-ban/chuoi-string-trong-cpp/tach-chuoi-trong-cpp/
 			char* char_arr;
 			char_arr = &listSymptomID[0];
 			const char s[2] = " ";
 			char *token;
-		
+
 			token = strtok(char_arr, s);
 			while(token != NULL)
 			{
@@ -293,12 +293,12 @@ class menu
 							cout << "Enter phone number: "; getline(cin, phoneNumber);
 							cout << "Enter last overseas travel (Yes or No): "; getline(cin, lastOverseasTravel);
 							if (lastOverseasTravel == "Yes") {
-								for (int i = 0; i < numLocation; i++) {
-									cout << listLocation[i].getLocationID() << ". " << listLocation[i].getLocation() << endl;
-								}
-								cout << "Select id of visited location: "; getline(cin, visitedLocation);
 								cout << "Enter date time: "; getline(cin, dateTime);
 							}
+							for (int i = 0; i < numLocation; i++) {
+								cout << listLocation[i].getLocationID() << ". " << listLocation[i].getLocation() << endl;
+							}
+							cout << "Select id of visited location: "; getline(cin, visitedLocation);
 							for (int i = 0; i < numSymptom; i++) {
 								cout << listSymptom[i].getSymptomID() << ". " << listSymptom[i].getName() << endl;
 							}

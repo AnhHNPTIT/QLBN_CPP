@@ -52,10 +52,7 @@ class PatientDetail
 			this->covidTest = covidTest;
 			this->status = status;
 		}
-
-		~PatientDetail(){
-		}
-
+		
 		int getPatientID() {
 			return this->patientID;
 		}

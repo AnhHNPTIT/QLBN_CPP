@@ -7,11 +7,10 @@ using namespace std;
 
 class Location 
 {
-	protected:
+	public:
 		int locationID; // mã vị trí
 		string location; // vị trí có nguy cơ nhiễm COVID cao
 
-	public:
 		// Hàm khởi tạo không tham số
 		Location(){
 			this->locationID = 0;
